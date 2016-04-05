@@ -34,6 +34,10 @@ class PyScanii(object):
     def _get_url(self, method):
         return '/'.join((self.base_url, self.api_version, method))
 
+    @property
+    def last_file(self):
+        return self.files[-1]
+
     def ping(self):
         url = self._get_url('ping')
         if self.verbose:
@@ -57,7 +61,7 @@ class PyScanii(object):
             files = [files]
 
         for scanfile in files:
-            if os.path.exists(scanfile):
+            if os.path.isfile(scanfile):
                 self._scan(path=scanfile)
             else:
                 self._scan(string=scanfile)
