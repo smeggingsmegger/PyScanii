@@ -56,7 +56,6 @@ class PyScanii(object):
         if not any([ftype is list, ftype is tuple]):
             files = [files]
 
-        print(files)
         for scanfile in files:
             if os.path.exists(scanfile):
                 self._scan(path=scanfile)
@@ -87,7 +86,7 @@ class PyScanii(object):
 
         scanfile = ScanFile(name=name, **response)
         self.files.append(scanfile)
-        return scanfile
+        return self.files
 
 class ScanFile(object):
     name = ''
