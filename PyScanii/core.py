@@ -66,7 +66,7 @@ class PyScanii(object):
             else:
                 self._scan(string=scanfile)
 
-    def _scan(self, path=None, string=None):
+    def _scan(self, path=None, string=None, data=None):
         url = self._get_url(self.scan_method)
         if self.verbose:
             print("URL: {}".format(url))
