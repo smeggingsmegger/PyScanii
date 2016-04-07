@@ -19,12 +19,12 @@ def read(fname):
 
 long_description = read('README.md')
 
-if os.path.exists('README.txt'):
-    long_description = open('README.txt').read()
+if os.path.exists('README.rst'):
+    long_description = open('README.rst').read()
 
 setup(
     name='PyScanii',
-    version='1.1.3',
+    version='1.1.4',
     url='http://github.com/smeggingsmegger/PyScanii',
     license='MIT',
     author='Scott Blevins',
