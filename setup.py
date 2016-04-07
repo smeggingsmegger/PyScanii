@@ -24,7 +24,7 @@ if os.path.exists('README.txt'):
 
 setup(
     name='PyScanii',
-    version='1.1.1',
+    version='1.1.3',
     url='http://github.com/smeggingsmegger/PyScanii',
     license='MIT',
     author='Scott Blevins',
