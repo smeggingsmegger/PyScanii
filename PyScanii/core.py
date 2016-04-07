@@ -61,12 +61,17 @@ class PyScanii(object):
             files = [files]
 
         for scanfile in files:
-            if os.path.isfile(scanfile):
-                self._scan(path=scanfile)
-            else:
+            try:
+                if os.path.isfile(scanfile):
+                    self._scan(path=scanfile)
+                else:
+                    self._scan(string=scanfile)
+            except TypeError:
+                # must be encoded string without NULL bytes, not str
                 self._scan(string=scanfile)
 
-    def _scan(self, path=None, string=None, data=None):
+
+    def _scan(self, path=None, string=None):
         url = self._get_url(self.scan_method)
         if self.verbose:
             print("URL: {}".format(url))
